@@ -3,7 +3,10 @@
 
 <xacro:include filename="$(find gokul_description)/urdf/materials.xacro" />
 <xacro:include filename="$(find gokul_description)/urdf/gokul.trans" />
-<xacro:include filename="$(find gokul_description)/urdf/gokul.gazebo" />
+<xacro:include filename="$(find gokul_description)/gazebo/gokul_materials.gazebo" />
+<xacro:include filename="$(find gokul_description)/gazebo/gokul_physics.gazebo" />
+<xacro:include filename="$(find gokul_description)/gazebo/gokul_plugins.gazebo" />
+
 <link name="base_link">
   <inertial>
     <origin rpy="0 0 0" xyz="0.013059632318862986 -5.92759272841735e-16 0.0567125753128379"/>
@@ -15,7 +18,7 @@
     <geometry>
       <mesh filename="package://gokul_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    <material name="blue"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -260,14 +263,14 @@
   <origin rpy="0 0 0" xyz="0.0 -0.015 0.0"/>
   <parent link="motor_rf_1"/>
   <child link="wheel_rf_1"/>
-  <axis xyz="-0.0 -1.0 0.0"/>
+  <axis xyz="-0.0 1.0 0.0"/>
 </joint>
 
 <joint name="rev_rb" type="continuous">
   <origin rpy="0 0 0" xyz="0.0 -0.015 0.0"/>
   <parent link="motor_br_1"/>
   <child link="wheel_rb_1"/>
-  <axis xyz="0.0 -1.0 0.0"/>
+  <axis xyz="0.0 1.0 0.0"/>
 </joint>
 
 <joint name="rev_lf" type="continuous">

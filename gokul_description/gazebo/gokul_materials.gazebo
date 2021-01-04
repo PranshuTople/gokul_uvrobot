@@ -1,0 +1,68 @@
+<?xml version="1.0" ?>
+<robot name="gokul" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+
+<xacro:property name="body_color" value="Gazebo/SkyBlue" />
+<xacro:property name="motor_color" value="Gazebo/DarkGrey" />
+<xacro:property name="wheel_color" value="Gazebo/Grey" />
+<xacro:property name="lidar_base_color" value="Gazebo/Black" />
+<xacro:property name="lidar_top_color" value="Gazebo/Blue" />
+<xacro:property name="uv_color" value="Gazebo/PurpleGlow" />
+
+<!-- ################### WHEELS ############### -->
+
+<gazebo reference="wheel_rf_1">
+  <material>${wheel_color}</material>
+</gazebo>
+
+<gazebo reference="wheel_rb_1">
+  <material>${wheel_color}</material>
+</gazebo>
+
+<gazebo reference="wheel_lf_1">
+  <material>${wheel_color}</material>
+</gazebo>
+
+<gazebo reference="wheel_lb_1">
+  <material>${wheel_color}</material>
+</gazebo>
+
+<!-- ################### BASELINK ############### -->
+
+
+
+<gazebo reference="base_link">
+  <material>${body_color}</material>
+</gazebo>
+
+
+
+<gazebo reference="motor_rf_1">
+  <material>${motor_color}</material>
+</gazebo>
+
+<gazebo reference="motor_br_1">
+  <material>${motor_color}</material>
+</gazebo>
+
+<gazebo reference="motor_lf_1">
+  <material>${motor_color}</material>
+</gazebo>
+
+<gazebo reference="motor_bl_1">
+  <material>${motor_color}</material>
+</gazebo>
+
+<gazebo reference="lidar_base_1">
+  <material>${lidar_base_color}</material>
+</gazebo>
+
+<gazebo reference="lidar_top_1">
+  <material>${lidar_top_color}</material>
+</gazebo>
+
+<gazebo reference="uv_lamp_1">
+  <material>${uv_color}</material>
+</gazebo>
+
+</robot>
