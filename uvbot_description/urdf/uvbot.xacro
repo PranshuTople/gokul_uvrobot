@@ -1,0 +1,194 @@
+<?xml version="1.0" ?>
+<robot name="uvbot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find uvbot_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find uvbot_description)/urdf/uvbot.trans" />
+<xacro:include filename="$(find uvbot_description)/urdf/uvbot.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.004074164770490109 -1.3105282297133997e-17 0.061925957669671544"/>
+    <mass value="43.582630252711674"/>
+    <inertia ixx="0.13814" ixy="-0.0" ixz="-0.009069" iyy="0.614846" iyz="-0.0" izz="0.706719"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://uvbot_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://uvbot_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_rf_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-2.7755575615628914e-17 -0.01999999999999999 6.938893903907228e-18"/>
+    <mass value="3.551256335617904"/>
+    <inertia ixx="0.00367" ixy="0.0" ixz="0.0" iyy="0.006392" iyz="0.0" izz="0.00367"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.12 0.1 -0.0605"/>
+    <geometry>
+      <mesh filename="package://uvbot_description/meshes/wheel_rf_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.12 0.1 -0.0605"/>
+    <geometry>
+      <mesh filename="package://uvbot_description/meshes/wheel_rf_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_rb_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="1.3877787807814457e-17 -0.019999999999999976 2.0816681711721685e-17"/>
+    <mass value="3.5512563356179028"/>
+    <inertia ixx="0.00367" ixy="-0.0" ixz="0.0" iyy="0.006392" iyz="0.0" izz="0.00367"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.12 0.1 -0.0605"/>
+    <geometry>
+      <mesh filename="package://uvbot_description/meshes/wheel_rb_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.12 0.1 -0.0605"/>
+    <geometry>
+      <mesh filename="package://uvbot_description/meshes/wheel_rb_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_lf_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.0 0.020000000000000018 6.938893903907228e-18"/>
+    <mass value="3.551256335617902"/>
+    <inertia ixx="0.00367" ixy="0.0" ixz="0.0" iyy="0.006392" iyz="0.0" izz="0.00367"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.12 -0.1 -0.0605"/>
+    <geometry>
+      <mesh filename="package://uvbot_description/meshes/wheel_lf_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.12 -0.1 -0.0605"/>
+    <geometry>
+      <mesh filename="package://uvbot_description/meshes/wheel_lf_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_lb_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.0 0.01999999999999999 6.938893903907228e-18"/>
+    <mass value="3.551256335617904"/>
+    <inertia ixx="0.00367" ixy="0.0" ixz="-0.0" iyy="0.006392" iyz="-0.0" izz="0.00367"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.12 -0.1 -0.0605"/>
+    <geometry>
+      <mesh filename="package://uvbot_description/meshes/wheel_lb_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.12 -0.1 -0.0605"/>
+    <geometry>
+      <mesh filename="package://uvbot_description/meshes/wheel_lb_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lidar_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.017798165137614674"/>
+    <mass value="0.8960345846813674"/>
+    <inertia ixx="0.000327" ixy="0.0" ixz="0.0" iyy="0.000327" iyz="0.0" izz="0.000422"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.15 -0.0 -0.128"/>
+    <geometry>
+      <mesh filename="package://uvbot_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.15 -0.0 -0.128"/>
+    <geometry>
+      <mesh filename="package://uvbot_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="uv_light_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.17500000000000007"/>
+    <mass value="31.073492936656635"/>
+    <inertia ixx="0.345175" ixy="0.0" ixz="0.0" iyy="0.345175" iyz="0.0" izz="0.055932"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 -0.0 -0.098"/>
+    <geometry>
+      <mesh filename="package://uvbot_description/meshes/uv_light_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 -0.0 -0.098"/>
+    <geometry>
+      <mesh filename="package://uvbot_description/meshes/uv_light_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Rev1" type="continuous">
+  <origin rpy="0 0 0" xyz="0.12 -0.1 0.0605"/>
+  <parent link="base_link"/>
+  <child link="wheel_rf_1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="Rev2" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.12 -0.1 0.0605"/>
+  <parent link="base_link"/>
+  <child link="wheel_rb_1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="Rev3" type="continuous">
+  <origin rpy="0 0 0" xyz="0.12 0.1 0.0605"/>
+  <parent link="base_link"/>
+  <child link="wheel_lf_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="Rev4" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.12 0.1 0.0605"/>
+  <parent link="base_link"/>
+  <child link="wheel_lb_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="Rigid5" type="fixed">
+  <origin rpy="0 0 0" xyz="0.15 0.0 0.128"/>
+  <parent link="base_link"/>
+  <child link="lidar_1"/>
+</joint>
+
+<joint name="Rigid6" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0 0.0 0.098"/>
+  <parent link="base_link"/>
+  <child link="uv_light_1"/>
+</joint>
+
+</robot>

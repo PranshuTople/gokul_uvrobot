@@ -1,0 +1,9 @@
+<launch>
+
+<rosparam file="$(find gokul_description)/launch/controller.yaml" command="load"/>
+<node args="rev_rf_position_controller rev_rb_position_controller rev_lf_position_controller rev_lb_position_controller joint_state_controller " name="controller_spawner" ns="gokul" output="screen" pkg="controller_manager" respawn="false" type="spawner"/>
+<node name="robot_state_publisher" output="screen" pkg="robot_state_publisher" respawn="false" type="robot_state_publisher">
+  <remap from="/joint_states" to="/gokul/joint_states"/>
+</node>
+
+</launch>

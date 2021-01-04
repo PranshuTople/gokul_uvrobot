@@ -1,0 +1,48 @@
+<?xml version="1.0" ?>
+<robot name="gokul" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<transmission name="rev_rf_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="rev_rf">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="rev_rf_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="rev_rb_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="rev_rb">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="rev_rb_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="rev_lf_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="rev_lf">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="rev_lf_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="rev_lb_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="rev_lb">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="rev_lb_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+</robot>

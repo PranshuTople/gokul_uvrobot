@@ -1,0 +1,329 @@
+<?xml version="1.0" ?>
+<robot name="gokul" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find gokul_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find gokul_description)/urdf/gokul.trans" />
+<xacro:include filename="$(find gokul_description)/urdf/gokul.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.013059632318862986 -5.92759272841735e-16 0.0567125753128379"/>
+    <mass value="0.43912831999999896"/>
+    <inertia ixx="0.002235" ixy="0.0" ixz="-0.000228" iyy="0.007253" iyz="0.0" izz="0.008643"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://gokul_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://gokul_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_rf_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-2.1204843436706255e-12 -0.020911344793692346 -4.163336342344337e-16"/>
+    <mass value="0.3041090636805748"/>
+    <inertia ixx="0.000403" ixy="-0.0" ixz="-0.0" iyy="0.000666" iyz="-0.0" izz="0.000403"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.12 0.106 -0.06"/>
+    <geometry>
+      <mesh filename="package://gokul_description/meshes/wheel_rf_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.12 0.106 -0.06"/>
+    <geometry>
+      <mesh filename="package://gokul_description/meshes/wheel_rf_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_rb_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-2.1196794319777723e-12 -0.020911344793691625 -4.163336342344337e-17"/>
+    <mass value="0.3041090636805748"/>
+    <inertia ixx="0.000403" ixy="-0.0" ixz="-0.0" iyy="0.000666" iyz="-0.0" izz="0.000403"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.12 0.106 -0.06"/>
+    <geometry>
+      <mesh filename="package://gokul_description/meshes/wheel_rb_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.12 0.106 -0.06"/>
+    <geometry>
+      <mesh filename="package://gokul_description/meshes/wheel_rb_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_lf_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-2.1197210653411958e-12 0.02091134479369207 2.0816681711721685e-16"/>
+    <mass value="0.30410906368057344"/>
+    <inertia ixx="0.000403" ixy="-0.0" ixz="0.0" iyy="0.000666" iyz="0.0" izz="0.000403"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.12 -0.106 -0.06"/>
+    <geometry>
+      <mesh filename="package://gokul_description/meshes/wheel_lf_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.12 -0.106 -0.06"/>
+    <geometry>
+      <mesh filename="package://gokul_description/meshes/wheel_lf_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_lb_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="7.771561172376096e-16 0.020911344793691763 4.3021142204224816e-16"/>
+    <mass value="0.30410906368057566"/>
+    <inertia ixx="0.000403" ixy="0.0" ixz="0.0" iyy="0.000666" iyz="0.0" izz="0.000403"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.12 -0.106 -0.06"/>
+    <geometry>
+      <mesh filename="package://gokul_description/meshes/wheel_lb_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.12 -0.106 -0.06"/>
+    <geometry>
+      <mesh filename="package://gokul_description/meshes/wheel_lb_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="motor_rf_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="1.8041124150158794e-15 0.042362614481282646 0.0"/>
+    <mass value="0.4868541648357804"/>
+    <inertia ixx="0.000339" ixy="0.0" ixz="0.0" iyy="5.6e-05" iyz="0.0" izz="0.000339"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.12 0.091 -0.06"/>
+    <geometry>
+      <mesh filename="package://gokul_description/meshes/motor_rf_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.12 0.091 -0.06"/>
+    <geometry>
+      <mesh filename="package://gokul_description/meshes/motor_rf_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="motor_br_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-1.8318679906315083e-15 0.04236261448128265 2.0816681711721685e-17"/>
+    <mass value="0.48685416483578053"/>
+    <inertia ixx="0.000339" ixy="-0.0" ixz="-0.0" iyy="5.6e-05" iyz="0.0" izz="0.000339"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.12 0.091 -0.06"/>
+    <geometry>
+      <mesh filename="package://gokul_description/meshes/motor_br_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.12 0.091 -0.06"/>
+    <geometry>
+      <mesh filename="package://gokul_description/meshes/motor_br_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="motor_lf_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="1.8041124150158794e-15 -0.042362614481282646 0.0"/>
+    <mass value="0.4868541648357804"/>
+    <inertia ixx="0.000339" ixy="-0.0" ixz="0.0" iyy="5.6e-05" iyz="-0.0" izz="0.000339"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.12 -0.091 -0.06"/>
+    <geometry>
+      <mesh filename="package://gokul_description/meshes/motor_lf_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.12 -0.091 -0.06"/>
+    <geometry>
+      <mesh filename="package://gokul_description/meshes/motor_lf_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="motor_bl_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-1.8318679906315083e-15 -0.04236261448128268 1.3877787807814457e-17"/>
+    <mass value="0.48685416483578053"/>
+    <inertia ixx="0.000339" ixy="0.0" ixz="-0.0" iyy="5.6e-05" iyz="-0.0" izz="0.000339"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.12 -0.091 -0.06"/>
+    <geometry>
+      <mesh filename="package://gokul_description/meshes/motor_bl_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.12 -0.091 -0.06"/>
+    <geometry>
+      <mesh filename="package://gokul_description/meshes/motor_bl_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lidar_base_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.0042228618156789355 -3.1098521215329866e-16 0.01582168630574969"/>
+    <mass value="0.8862433475570365"/>
+    <inertia ixx="0.000324" ixy="-0.0" ixz="-0.000101" iyy="0.000672" iyz="0.0" izz="0.00082"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.125 0.0 -0.1145"/>
+    <geometry>
+      <mesh filename="package://gokul_description/meshes/lidar_base_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.125 0.0 -0.1145"/>
+    <geometry>
+      <mesh filename="package://gokul_description/meshes/lidar_base_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lidar_top_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.014999999999999708 -3.084146509213745e-16 0.005499999999999977"/>
+    <mass value="0.2653183066743863"/>
+    <inertia ixx="7.4e-05" ixy="0.0" ixz="-0.0" iyy="7.4e-05" iyz="0.0" izz="0.000143"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.125 0.0 -0.146"/>
+    <geometry>
+      <mesh filename="package://gokul_description/meshes/lidar_top_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.125 0.0 -0.146"/>
+    <geometry>
+      <mesh filename="package://gokul_description/meshes/lidar_top_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="uv_lamp_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-2.9171432727473463e-16 -3.272414640627397e-16 0.17500000000000018"/>
+    <mass value="0.32147339813490866"/>
+    <inertia ixx="0.004912" ixy="-0.0" ixz="-0.0" iyy="0.004912" iyz="0.0" izz="0.000529"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 -0.0 -0.0975"/>
+    <geometry>
+      <mesh filename="package://gokul_description/meshes/uv_lamp_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 -0.0 -0.0975"/>
+    <geometry>
+      <mesh filename="package://gokul_description/meshes/uv_lamp_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="rev_rf" type="continuous">
+  <origin rpy="0 0 0" xyz="0.0 -0.015 0.0"/>
+  <parent link="motor_rf_1"/>
+  <child link="wheel_rf_1"/>
+  <axis xyz="-0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="rev_rb" type="continuous">
+  <origin rpy="0 0 0" xyz="0.0 -0.015 0.0"/>
+  <parent link="motor_br_1"/>
+  <child link="wheel_rb_1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="rev_lf" type="continuous">
+  <origin rpy="0 0 0" xyz="0.0 0.015 0.0"/>
+  <parent link="motor_lf_1"/>
+  <child link="wheel_lf_1"/>
+  <axis xyz="-0.0 1.0 0.0"/>
+</joint>
+
+<joint name="rev_lb" type="continuous">
+  <origin rpy="0 0 0" xyz="0.0 0.015 0.0"/>
+  <parent link="motor_bl_1"/>
+  <child link="wheel_lb_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="Rigid32" type="fixed">
+  <origin rpy="0 0 0" xyz="0.12 -0.091 0.06"/>
+  <parent link="base_link"/>
+  <child link="motor_rf_1"/>
+</joint>
+
+<joint name="Rigid33" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.12 -0.091 0.06"/>
+  <parent link="base_link"/>
+  <child link="motor_br_1"/>
+</joint>
+
+<joint name="Rigid34" type="fixed">
+  <origin rpy="0 0 0" xyz="0.12 0.091 0.06"/>
+  <parent link="base_link"/>
+  <child link="motor_lf_1"/>
+</joint>
+
+<joint name="Rigid35" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.12 0.091 0.06"/>
+  <parent link="base_link"/>
+  <child link="motor_bl_1"/>
+</joint>
+
+<joint name="Rigid36" type="fixed">
+  <origin rpy="0 0 0" xyz="0.125 0.0 0.1145"/>
+  <parent link="base_link"/>
+  <child link="lidar_base_1"/>
+</joint>
+
+<joint name="Rigid37" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0 0.0 0.0315"/>
+  <parent link="lidar_base_1"/>
+  <child link="lidar_top_1"/>
+</joint>
+
+<joint name="Rigid38" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0 0.0 0.0975"/>
+  <parent link="base_link"/>
+  <child link="uv_lamp_1"/>
+</joint>
+
+</robot>
